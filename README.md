@@ -1,6 +1,6 @@
 # Cube_frontend
-!This is the customer information layout created using Type Script, Html and CSS.
-!To run this i used the node version 16.2.
+This is the customer information layout created using Type Script, Html and CSS.
+To run this i used the node version 16.2.
 When you select a customer card you will get the customer name, title, address, and a 3x3 grid of 9 random generated
 photos.
 
