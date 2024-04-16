@@ -1,11 +1,12 @@
+// src/components/CustomerCard.tsx
 import React from 'react';
+import '../App.css'; 
 
 interface Props {
   customer: {
     id: number;
     name: string;
     title: string;
-    content: string;
   };
   isSelected: boolean;
   onSelect: () => void;
@@ -14,10 +15,10 @@ interface Props {
 const CustomerCard: React.FC<Props> = ({ customer, isSelected, onSelect }) => {
   return (
     <div
+      className={`customer-card ${isSelected ? 'selected' : ''}`}
       onClick={onSelect}
-      style={{ padding: '10px', backgroundColor: isSelected ? '#ADD8E6' : '#FFFFFF', cursor: 'pointer' }}
     >
-      <p>{customer.name} - {customer.title} - {customer.content}</p>
+      <p>{customer.name} - {customer.title}</p>
     </div>
   );
 };

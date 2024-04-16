@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import CustomerCard from './CustomerCard';
 import CustomerDetails from './CustomerDetails';
-import axios from 'axios';
+import '../App.css'; 
 
 interface Customer {
   id: number;
@@ -17,32 +18,22 @@ const CustomerList: React.FC = () => {
 
   useEffect(() => {
     const fetchCustomers = async () => {
-      const response = await axios.get('https://jsonplaceholder.typicode.com/users'); 
+      const response = await axios.get('https://jsonplaceholder.typicode.com/users');
       setCustomers(response.data.map((user: any) => ({
         id: user.id,
         name: user.name,
-        title: "Mr/Ms", // Example static title
+        title: "Mr/Ms",
         address: user.address.street,
-        content: "Amarnath" // Simplified example
+        content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
       })));
     };
 
     fetchCustomers();
   }, []);
 
-  const listStyle = {
-    width: '250px',
-    height: '100vh',  
-    overflowY: 'auto',  
-    borderRight: '1px solid #ccc'  
-  };
-
   return (
-    <div style={{ display: 'flex', flexDirection: 'row' }}>
-      <div style={{width: '250px',
-    height: '100vh',  
-    overflowY: 'auto',  
-    borderRight: '1px solid #ccc'}}>
+    <div className="customer-list-container">
+      <div className="customer-list">
         {customers.map(customer => (
           <CustomerCard
             key={customer.id}
@@ -52,7 +43,7 @@ const CustomerList: React.FC = () => {
           />
         ))}
       </div>
-      <div style={{ flex: 1 }}>
+      <div className="flex-grow">
         {selectedCustomer && <CustomerDetails customer={selectedCustomer} />}
       </div>
     </div>
