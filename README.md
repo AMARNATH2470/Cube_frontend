@@ -6,3 +6,6 @@ photos.
 
 
 ![Layout](https://github.com/AMARNATH2470/Cube_frontend/assets/97387420/bd37a288-25b9-4cda-a0cf-1ed6456f23d2)
+
+
+![image](https://github.com/AMARNATH2470/Cube_frontend/assets/97387420/0d2f0ef9-c40b-48a9-8998-77e49cabfcc6)
